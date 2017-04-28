@@ -71,10 +71,13 @@ public class ShakespeareTrie {
         }
         return trie.get(word.substring(1));
     }
+    
+    
 
     public void print(PrintStream out) {
+        
         if (data != null) {
-            out.println(data.word  + " : " + data.count);
+            out.println(data.word  + " : " + data.count + "\t-->" +"\tSOUNDEX:" + Soundex.soundex(data.word));
         }
         if (tries != null) {
             for (ShakespeareTrie trie : tries) {
